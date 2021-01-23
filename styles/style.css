@@ -141,17 +141,28 @@ article{
     margin-bottom: 32px;
     padding: 16px;
 }
+article section{
+    margin-left: 16px;
+}
 article h2{
     margin: 0;
 }
-
 article h3{
     margin: 16px  0 0 0 ;
 }
 article p{
     margin: 0;
 }
-
+article ul{
+    margin: 0;
+}
+article a{
+    color: royalblue;
+    font-weight: bold;
+}
+article a:hover{
+    color: red;
+}
 article footer{
     margin-top: 16px;
     text-align: right;
@@ -199,51 +210,39 @@ article footer a:hover{
 .services-table .col-order a:hover{
     color: red;
 }
-.contact-form{
+.contact{
+    border: #d3d3d3 solid 1px;
+    border-radius: 16px;
+    margin: 20% auto 0 auto;
+    padding: 16px;
+    width: 60%;
+}
+.contact-header{
+    border-bottom: gray solid 2px;
+    padding-bottom: 8px;
     text-align: center;
 }
-.contact-form input,textarea{
-    margin-bottom: 16px;
-    min-height: 16px;
-    min-width: 400px;
-    padding: 4px;
-}
-.contact-form input:focus,textarea:focus{
-    border-color: #314047;
-}
-.contact-form button{
-    background-color: white;
-    border: black solid 1px;
-    border-radius: 4px;
-    padding: 8px;
-}
-.contact-form button:hover{
-    background-color: #314047;
-    color: white;
-    cursor: pointer;
-    padding: 8px;
-}
-.contact-footer{
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    width: 100%;
-}
-.contact-footer ul {
-    list-style-type: none;
+.contact h2{
+    font-size: 2em;
     margin: 0;
+    text-align: center;
+}
+.contact ul{
+    list-style-type: none;
     padding: 0;
-    overflow: hidden;
+    text-align: center;
 }
-.contact-footer .left {
-    float: left;
-    margin: 0 32px 16px 32px;
+.contact ul li{
+    margin: 12px 0;
 }
-.contact-footer .right {
-    float: right;
-    margin: 0 32px 16px 32px;
+.contact a{
+    color: royalblue;
+    font-size: 18px;
+    font-weight: bold;
 }
-
+.contact a:hover{
+    color: red;
+}
 @media (max-width: 1200px) {
     .cv{
         width: auto;
@@ -262,7 +261,7 @@ article footer a:hover{
     .header{
         grid-row: 1;
         position: static;
-        width: 100%;
+        width: auto;
     }
     .main-menu {
         grid-row: 2;
@@ -277,5 +276,9 @@ article footer a:hover{
     }
     .bottom{
         position: static;
+    }
+    .contact{
+        margin: auto;
+        width: auto;
     }
 }
