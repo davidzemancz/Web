@@ -53,7 +53,7 @@
                 return ["home", "mffuk", "projects", "contact"]
             }
             function on_body_load(){
-                init_pages()
+                init_pages();
             }
             function on_menu_item_click(page) {
                 const pages = get_pages()
@@ -97,21 +97,37 @@
         <div class="main-content">
             <div id="home" class="content-page">
                 <div class="main-content-header">
-                    <h2>Vítej</h2>
+                    <h2>Příspěvky</h2>
                     <p>
-                        At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio.
                     </p>
                 </div>
+                <article>
+                    <header>
+                        <h2>První příspěvěk</h2>
+                    </header>
+                    <section>
+                        <h3>
+                            Poznámka
+                        </h3>
+                        <p>
+                            Testovací verze webu. :)
+                        </p>
+                    </section>
+                    <footer>
+                        <p>24.01.2020</p>
+                    </footer>
+                </article>
             </div>
             <div id="mffuk" class="content-page">
                 <div class="main-content-header">
-                    <h2>Studium na MFFUK - obor informatika</h2>
+                    <h2>MFFUK</h2>
                     <p>
+                        Aktuálně studuji obor Informatika na Matematicko-fyzikální fakutlně UK.
                     </p>                   
                 </div>
                 <article>
                     <header>
-                        <h2>MFFUK - ZS 2020/21</h2>
+                        <h2>ZS 2020/21</h2>
                     </header>
                     <section>
                         <h3>
@@ -130,6 +146,19 @@
                             <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpseXnsFyiqZQgXWaA?e=7ICZja">Úvod do počítačových sítí (část otázek)</a></li>
                         </ul>
                     </section>
+                    <hr class="section-divider"/>
+                    <section>
+                        <h3>
+                            Zdrojové kódy
+                        </h3>
+                        <p>
+                           Zdrojové kódy ze cvičení z Programování I v Pythonu.
+                        </p>
+                        <br/>
+                        <ul>
+                            <li><a target="_blank" href="https://1drv.ms/u/s!AtwQciT4dmsCtptBGYXVYP_7Lf_TJw?e=QFAOGE">Projekt pro MS Visual studio</a></li>
+                        </ul>
+                    </section>
                     <footer>
                         
                     </footer>
@@ -137,7 +166,7 @@
             </div>
             <div id="projects" class="content-page">
                 <div class="main-content-header">
-                    <h2>Co teďka dělám nebo bych chtěl dělat ...</h2>
+                    <h2>Projekty</h2>
                     <p>
                     </p>
                 </div>
@@ -169,8 +198,8 @@
                             Odkazy
                         </h3>
                         <ul>
-                            <li><a href="https://github.com/davidzemancz/GraphIt">GitHub</a></li>
-                            <li><a href="https://github.com/davidzemancz/GraphIt/blob/master/GraphIt/Docs/GraphIt-cs.docx">Dokumentace</a></li>
+                            <li><a target="_blank" href="https://github.com/davidzemancz/GraphIt">GitHub</a></li>
+                            <li><a target="_blank" href="https://github.com/davidzemancz/GraphIt/blob/master/GraphIt/Docs/GraphIt-cs.docx">Dokumentace</a></li>
                         </ul>
                     </section>
                     <footer>
@@ -194,9 +223,9 @@
                             Odkazy
                         </h3>
                         <ul>
-                            <li><a href="https://github.com/davidzemancz/PythonAI">GitHub</a></li>
-                            <li><a href="https://www.youtube.com/playlist?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3">Tutoriály</a></li>
-                            <li><a href="https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3Blue1Brown</a></li>
+                            <li><a target="_blank" href="https://github.com/davidzemancz/PythonAI">GitHub</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/playlist?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3">Tutoriály</a></li>
+                            <li><a target="_blank" href="https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3Blue1Brown</a></li>
                         </ul>
                     </section>
                     <footer>
@@ -205,17 +234,16 @@
                 </article>
             </div>
             <div id="contact" class="content-page">
-                    <div class="contact">
-                        <div class="contact-header">
-                            <h2>Kontakt</h2>
-                        </div>
-                        <ul>
-                        <li><a href="mailto:mail@davidzeman.cz">mail@davidzeman.cz</a></li>
-                        <li><a target="_blank" href="https://github.com/davidzemancz">GitHub</a></li>
-                        <li><a target="_blank" href="https://www.linkedin.com/in/david-zeman-215a421b2/">LinkedIn</a></li>
-                        </ul>
+                <div class="contact">
+                    <div class="contact-header">
+                        <h2>Kontakt</h2>
                     </div>
-                <div>
+                    <ul>
+                    <li><a href="mailto:mail@davidzeman.cz">mail@davidzeman.cz</a></li>
+                    <li><a target="_blank" href="https://github.com/davidzemancz">GitHub</a></li>
+                    <li><a target="_blank" href="https://www.linkedin.com/in/david-zeman-215a421b2/">LinkedIn</a></li>
+                    </ul>
+                </div>
         </div>
     </body>
 </html>

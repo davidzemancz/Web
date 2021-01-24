@@ -135,6 +135,10 @@ body{
     padding: 16px 0 0 0;
     text-align: center;
 }
+.section-divider{
+    border: lightgrey 1px solid;
+    margin: 0 16px;
+}
 article{
     border: lightgray solid 1px;
     border-radius: 16px;
@@ -142,7 +146,7 @@ article{
     padding: 16px;
 }
 article section{
-    margin-left: 16px;
+    margin: 0 16px 16px 16px;
 }
 article h2{
     margin: 0;
@@ -166,6 +170,9 @@ article a:hover{
 article footer{
     margin-top: 16px;
     text-align: right;
+}
+article footer p{
+    font-style: italic;
 }
 article footer a{
     color: royalblue;
@@ -215,7 +222,7 @@ article footer a:hover{
     border-radius: 16px;
     margin: 20% auto 0 auto;
     padding: 16px;
-    width: 60%;
+    width: 40%;
 }
 .contact-header{
     border-bottom: gray solid 2px;
@@ -273,6 +280,9 @@ article footer a:hover{
         margin: 0;
         position: static;
         width: auto;
+    }
+    .main-menu-items{
+        margin-top: 0;
     }
     .bottom{
         position: static;
