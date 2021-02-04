@@ -135,6 +135,19 @@ body{
     padding: 16px 0 0 0;
     text-align: center;
 }
+.cv-print{
+    color: royalblue;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+.cv-print:hover{
+    color: red;
+}
+.cv-print-only{
+    display: none;
+}
 .section-divider{
     border: lightgrey 1px solid;
     margin: 0 16px;
@@ -250,6 +263,7 @@ article footer a:hover{
 .contact a:hover{
     color: red;
 }
+
 @media (max-width: 1200px) {
     .cv{
         width: auto;
@@ -290,5 +304,13 @@ article footer a:hover{
     .contact{
         margin: auto;
         width: auto;
+    }
+}
+@media print{
+    .cv-print{
+        display: none;
+    }
+    .cv-print-only{
+        display: block;
     }
 }

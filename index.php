@@ -16,13 +16,17 @@
             function print_element(elem)
             {
                 const print_window = window.open('', 'PRINT', 'height=' + window.innerHeight + ',width=' + window.innerWidth);
-                print_window.document.write('<html><head><title>' + document.title  + '</title>');
+                print_window.document.write('<html><head><title>' + document.title + '</title>');
                 print_window.document.write('<link rel="stylesheet" href="styles/style.css"/>');
-                print_window.document.write('</head><body >');
+                print_window.document.write('</head><body>');
                 print_window.document.write(document.getElementById(elem).innerHTML);
                 print_window.document.write('</body></html>');
-                print_window.print();
-                print_window.close();
+                print_window.focus();
+                setTimeout( function(){
+                    print_window.print();
+                    print_window.close();
+                }, 500);
+               
 
                 return true;
             }
@@ -50,7 +54,7 @@
                 }
             }
             function get_pages(){
-                return ["home", "mffuk", "projects", "contact"]
+                return ["home", "mffuk", "projects", "contact","about"]
             }
             function on_body_load(){
                 init_pages();
@@ -87,6 +91,9 @@
                    <span id="menu-projects" onclick="on_menu_item_click('projects')">Projekty</span>
                </div>
                <div class="main-menu-item">
+                <span id="menu-about" onclick="on_menu_item_click('about')">Životopis</span>
+               </div>
+               <div class="main-menu-item">
                 <span id="menu-mffuk" onclick="on_menu_item_click('mffuk')">MFFUK</span>
                </div>
                <div class="main-menu-item">
@@ -99,6 +106,9 @@
                 <div class="main-content-header">
                     <h2>Příspěvky</h2>
                     <p>
+                        <?php
+                            echo "<h2>PHP is Fun!</h2>";
+                            ?>
                     </p>
                 </div>
                 <article>
@@ -233,6 +243,95 @@
                         
                     </footer>
                 </article>
+            </div>
+            <div id="about" class="content-page">
+                <div id="cv">
+                    <div class="cv">
+                        <div class="cv-header">
+                            <h2>Životopis</h2>
+                        </div>
+                        <div class="cv-body">
+                            <div class="cv-section">
+                                <h3>
+                                    David Zeman
+                                </h3>
+                                <ul>
+                                    <li>20 let</li>
+                                    <li>Vývojář (C#, Python, ReactJS, Caché)</li>
+                                    <li>5 let praxe</li>
+                                    <li>Praha, České Budějovice</li>
+                                </ul>
+                            </div>
+                            <div class="cv-section">
+                                <h3>
+                                    Vzdělání
+                                </h3>
+                                <ul>
+                                    <li>Univerzita Karlova
+                                        <ul>
+                                            <li>Matematicko-fyzikální fakulta</li>
+                                            <li>Informatika</li>
+                                            <li>2020 - nyní</li>
+                                        </ul>
+                                    </li>
+                                    <li>Gymnázium
+                                        <ul>
+                                            <li>Prachatice, Zlatá Stezka 137</li>
+                                            <li>2012 - 2020</li>
+                                        </ul>
+                                    </li>
+                                    <li>ZŠ Národní
+                                        <ul>
+                                            <li>Prachatice, Národní 1018</li>
+                                            <li>2007-2012</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="cv-section">
+                                <h3>
+                                    Praxe
+                                </h3>
+                                <ul>
+                                    <li>Skladové hospodářství
+                                        <ul>
+                                            <li>M-line software s.r.o.</li>
+                                            <li>Komplexní systém pro správu skladového hospodářství velkých dopravních firem v ČR.</li>
+                                            <li class="italic">C#, Caché</li>
+                                        </ul>
+                                    </li>
+                                    <li>Spedice nákladní dopravy
+                                        <ul>
+                                            <li>M-line software s.r.o.</li>
+                                            <li>Logistický systém na správu zakázek a tvorbu objednávek pro dopravní společnosti.</li>
+                                            <li class="italic">C#, Caché</li>
+                                        </ul>
+                                    </li>
+                                    <li>Objednávky
+                                        <ul>
+                                            <li>M-line software s.r.o.</li>
+                                            <li>Objednávkový systém pro dopravní podnik s procesem od zadání vnitroobjednávky, jejího schválení a tvorbu objednávky pro dodavatele.</li>
+                                            <li class="italic">C#, Caché</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="cv-section cv-print-only">
+                                <h3>
+                                    Kontakt
+                                </h3>
+                                <ul>
+                                    <li>E-mail: mail@davidzeman.cz</li>
+                                    <li>Telefon: +420 720 333 987</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="cv-footer">
+                            <span class="cv-print" onclick="print_element('cv')">Tisk</span>
+                            <span class="cv-print-only">www.davidzeman.cz</span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="contact" class="content-page">
                 <div class="contact">
