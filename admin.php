@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] === false){
+    header("location: login.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
     <head>
@@ -10,7 +19,7 @@
         <title>David Zeman</title>
 
         <link rel="icon" href="img/logo.png"/>
-        <link rel="stylesheet" href="styles/style.css"/>
+        <link rel="stylesheet" href="styles/admin.css"/>
 
         <script>
             function print_element(elem) {
@@ -53,7 +62,7 @@
                 }
             }
             function get_pages(){
-                return ["home", "mffuk", "projects", "contact","about"]
+                return ["home", "mffuk", "projects"]
             }
             function on_body_load(){
                 init_pages();
@@ -79,7 +88,7 @@
     <body onload="on_body_load()">
         <div class="header">
             <img alt="logo" class="logo" src="img/logo_inv.png">
-            <h1>David Zeman</h1>
+            <h1>David Zeman - EDITOR</h1>
         </div>
         <div class="main-menu">
            <div class="main-menu-items">
@@ -90,17 +99,11 @@
                    <span id="menu-projects" onclick="on_menu_item_click('projects')">Projekty</span>
                </div>
                <div class="main-menu-item">
-                <span id="menu-about" onclick="on_menu_item_click('about')">Životopis</span>
-               </div>
-               <div class="main-menu-item">
-                <span id="menu-mffuk" onclick="on_menu_item_click('mffuk')">MFFUK</span>
-               </div>
-               <div class="main-menu-item">
-                    <span id="menu-contact" onclick="on_menu_item_click('contact')">Kontakt</span>
+                   <span id="menu-mffuk" onclick="on_menu_item_click('mffuk')">MFFUK</span>
                </div>
                <hr class="main-menu-divider"/>
                <div class="main-menu-item bottom">
-                    <a href="login.php">Přihlásit se</a>
+                    <a href="logout.php">Odhlásit se</a>
                </div>
            </div>
         </div> 

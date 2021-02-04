@@ -1,0 +1,34 @@
+html{
+    height: 100%;
+}
+body{
+    font-family: "Calibri", sans-serif;
+    height: 100%;
+    margin: 0;
+}
+.login{
+    background-color: #314047;
+    border-radius: 16px;
+    color: white;
+    padding: 32px 16px;
+    margin: 200px auto 0 auto;
+    text-align: center;
+    width: fit-content;
+}
+.login h1{
+    font-size: 4em;
+    margin: 24px 24px;
+    text-align: center;
+}
+.login-form{
+    display: block;
+}
+.form-group{
+    text-align: center;
+    
+}
+.form-group input{
+    margin: 8px 0 16px 0;
+    padding: 8px;
+    width: 80%;
+}
