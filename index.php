@@ -138,6 +138,7 @@
                             }
                             echo "Connected successfully";
 
+                            /*
                             $sql = "INSERT INTO Articles (Title, Content)
                             VALUES ('První PHP příspěvek', 'Test prvního příspěvku uloženého v databázi.')";
 
@@ -146,7 +147,7 @@
                             } else {
                             echo "Error: " . $sql . "<br>" . $conn->error;
                             }
-
+                            */
                             $conn->close();
                         ?>
                         </p>

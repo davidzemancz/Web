@@ -104,180 +104,48 @@ body{
 .main-content-header p{
     margin: 8px 0 8px 0;
 }
-.about{
-    align-items: center;
-}
-.cv{
-    border: lightgray solid 1px;
-    border-radius: 16px;
-    margin: 0 auto 32px auto;
-    padding: 16px;
-    width: 60%;
-}
-.cv h2{
-    font-size: 2em;
-    margin: 0;
-    text-align: center;
-}
-.cv h3{
-    margin: 0 0 8px 0;
-}
-.cv ul{
-    margin: 0;
-}
-.cv-header{
-    border-bottom: gray solid 2px;
-    padding-bottom: 8px;
-}
-.cv-body{
-    padding: 0 16px;
-}
-.cv-section{
-    border-bottom: lightgray solid 1px;
-    padding: 16px;
-}
-.cv-footer{
-    padding: 16px 0 0 0;
-    text-align: center;
-}
-.cv-print{
-    color: royalblue;
-    cursor: pointer;
-    font-size: 18px;
-    font-weight: bold;
-    text-decoration: underline;
-}
-.cv-print:hover{
-    color: red;
-}
-.cv-print-only{
-    display: none;
-}
-.section-divider{
-    border: lightgrey 1px solid;
-    margin: 0 16px;
-}
-article{
+.card{
     border: lightgray solid 1px;
     border-radius: 16px;
     margin-bottom: 32px;
     padding: 16px;
 }
-article section{
-    margin: 0 16px 16px 16px;
-}
-article h2{
-    margin: 0;
-}
-article h3{
-    margin: 16px  0 0 0 ;
-}
-article p{
-    margin: 0;
-}
-article ul{
-    margin: 0;
-}
-article a{
-    color: royalblue;
-    font-weight: bold;
-}
-article a:hover{
-    color: red;
-}
-article footer{
-    margin-top: 16px;
-    text-align: right;
-}
-article footer p{
-    font-style: italic;
-}
-article footer a{
-    color: royalblue;
-    font-size: 18px;
-    font-weight: bold;
-}
-article footer a:hover{
-    color: red;
-}
-.services-table{
-    border: lightgray solid 1px;
-    border-collapse: separate;
-    border-radius: 16px;
-    border-spacing: 0;
+.card textarea{
+    height: 100px;
+    resize: vertical;
     width: 100%;
 }
-.services-table th{
-    text-align: center;
-}
-.services-table td, th{
-    border-bottom: lightgray solid 1px;
-    padding: 16px 16px;
-    margin: 0;
-}
-.services-table tr:last-child td{
-    border-bottom: none;
-}
-.services-table .col-platform{
-    padding: 16px 32px;
-    text-align: center;
-}
-.services-table .col-order{
-    border-bottom: none;
-    padding: 16px 32px;
-    text-align: center;
-}
-.services-table .col-order a{
-    color: royalblue;
-    font-size: 18px;
-    font-weight: bold;
-}
-.services-table .col-order a:hover{
-    color: red;
-}
-.contact{
-    border: #d3d3d3 solid 1px;
-    border-radius: 16px;
-    margin: 20% auto 0 auto;
-    padding: 16px;
-    width: 40%;
-}
-.contact-header{
-    border-bottom: gray solid 2px;
-    padding-bottom: 8px;
-    text-align: center;
-}
-.contact h2{
-    font-size: 2em;
-    margin: 0;
-    text-align: center;
-}
-.contact ul{
-    list-style-type: none;
+.cards-toolbar ul{
     padding: 0;
-    text-align: center;
 }
-.contact ul li{
-    margin: 12px 0;
-}
-.contact a{
+.cards-toolbar ul li{
+    border: lightgray solid 1px;
+    border-radius: 16px;
     color: royalblue;
+    cursor: pointer;
+    display:inline;
     font-size: 18px;
     font-weight: bold;
+    padding: 8px 24px;
 }
-.contact a:hover{
-    color: red;
+.cards-toolbar ul li:hover{
+    background-color: royalblue;
+    color: white;
 }
-
+input[type="submit"], button{
+    background-color: lightgrey;
+    border: lightgray solid 1px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-right: 8px;
+    padding: 4px 12px;
+}
 @media (max-width: 1200px) {
-    .cv{
-        width: auto;
-    }
     .main-content-header{
         width: auto;
     }
 }
-
 @media (max-width: 800px) {
     body{
         display: grid;
@@ -306,16 +174,5 @@ article footer a:hover{
     .main-menu-item.bottom{
         position: static;
     }
-    .contact{
-        margin: auto;
-        width: auto;
-    }
 }
-@media print{
-    .cv-print{
-        display: none;
-    }
-    .cv-print-only{
-        display: block;
-    }
-}
+
