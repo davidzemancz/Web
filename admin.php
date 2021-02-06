@@ -146,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <?php
                     require_once("config.php");
 
-                    $sql = "SELECT Id, Title, Content, Page FROM articles";
+                    $sql = "SELECT Id, Title, Content, Page FROM articles ORDER BY Id DESC";
                     $result = $mysqli->query($sql);
 
                     if ($result->num_rows > 0) {

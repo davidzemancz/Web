@@ -2,7 +2,7 @@
 
 function render_cards($page){
     require_once("config.php");
-    $sql = "SELECT Id, Title, Content, Page, TimeStamp FROM articles WHERE Page = '" . $page . "'";
+    $sql = "SELECT Id, Title, Content, Page, TimeStamp FROM articles WHERE Page = '" . $page . "' ORDER BY Id DESC";
     $result = $mysqli->query($sql);
 
     if ($result->num_rows > 0) {
