@@ -10,16 +10,16 @@ require_once("config.php");
  
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     if ($_POST["action"] == "update"){
-        $sql = "UPDATE Articles
+        $sql = "UPDATE articles
         SET Title='" . $_POST["title"] . "', Content='" . $_POST["content"] . "', Page='" . $_POST["page"] . "'
         WHERE Id = ". $_POST["id"];
     }
     else if($_POST["action"] == "add"){
-        $sql = "INSERT INTO Articles (Title, Content)
-        VALUES ('Nový příspěvek', '')";
+        $sql = "INSERT INTO articles (Title, Content, Page)
+        VALUES ('Nový příspěvek', '','home')";
     }
     else if($_POST["action"] == "delete"){
-        $sql = "DELETE FROM Articles WHERE Id = " . $_POST["id"];
+        $sql = "DELETE FROM articles WHERE Id = " . $_POST["id"];
     }
 
     if ($mysqli->query($sql) === TRUE) {
@@ -146,7 +146,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <?php
                     require_once("config.php");
 
-                    $sql = "SELECT Id, Title, Content, Page FROM Articles";
+                    $sql = "SELECT Id, Title, Content, Page FROM articles";
                     $result = $mysqli->query($sql);
 
                     if ($result->num_rows > 0) {

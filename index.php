@@ -1,3 +1,34 @@
+<?php
+
+function render_cards($page){
+    require_once("config.php");
+    $sql = "SELECT Id, Title, Content, Page, TimeStamp FROM articles WHERE Page = '" . $page . "'";
+    $result = $mysqli->query($sql);
+
+    if ($result->num_rows > 0) {
+        // output data of each row
+        while($row = $result->fetch_assoc()) {
+            echo ' 
+            <article>
+                <header>
+                    <h2>'. $row["Title"] .'</h2>
+                </header>
+                    ' . $row["Content"] . '
+                <footer>
+                    <p>' . date("d.m.Y",strtotime($row["TimeStamp"])) . '</p>
+                </footer>
+            </article>
+            ';
+        }
+    } else {
+        echo "Žádné karty";
+    }
+
+    $mysqli->close();
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="cs">
     <head>
@@ -111,75 +142,9 @@
                     <p>
                     </p>
                 </div>
-                <article>
-                    <header>
-                        <h2>Novinky</h2>
-                    </header>
-                    <section>
-                        <h3>
-                            PHP!
-                        </h3>
-                        <p>
-                            <?php echo "Web od nynějška úspešně běží na PHP 7.3." ?>
-                        </p>
-                        <p>
-                        <?php
-                            $servername = "localhost";
-                            $username = "root";
-                            $password = "";
-                            $dbname = "web";
-
-                            // Create connection
-                            $conn = new mysqli($servername, $username, $password, $dbname);
-
-                            // Check connection
-                            if ($conn->connect_error) {
-                            die("Connection failed: " . $conn->connect_error);
-                            }
-                            echo "Connected successfully";
-
-                            /*
-                            $sql = "INSERT INTO Articles (Title, Content)
-                            VALUES ('První PHP příspěvek', 'Test prvního příspěvku uloženého v databázi.')";
-
-                            if ($conn->query($sql) === TRUE) {
-                            echo "New record created successfully";
-                            } else {
-                            echo "Error: " . $sql . "<br>" . $conn->error;
-                            }
-                            */
-                            $conn->close();
-                        ?>
-                        </p>
-                    </section>
-                    <section>
-                        <h3>
-                             Životopis
-                        </h3>
-                        <p>
-                            V menu přibyl nový odkaz na stránku mého skromného životopisu. Ten je možné tisknout či uložit do formátu PDF.
-                        </p>
-                    </section>
-                    <footer>
-                        <p>04.02.2021</p>
-                    </footer>
-                </article>
-                <article>
-                    <header>
-                        <h2>První příspěvěk</h2>
-                    </header>
-                    <section>
-                        <h3>
-                            Poznámka
-                        </h3>
-                        <p>
-                            Testovací verze webu. :)
-                        </p>
-                    </section>
-                    <footer>
-                        <p>24.01.2021</p>
-                    </footer>
-                </article>
+                <?php 
+                    render_cards("home")
+                ?>
             </div>
             <div id="mffuk" class="content-page">
                 <div class="main-content-header">
