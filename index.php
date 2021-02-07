@@ -1,7 +1,9 @@
 <?php
+require_once("config.php");
 
 function render_cards($page){
-    require_once("config.php");
+    global $mysqli;
+    
     $sql = "SELECT Id, Title, Content, Page, TimeStamp FROM articles WHERE Page = '" . $page . "' ORDER BY Id DESC";
     $result = $mysqli->query($sql);
 
@@ -13,20 +15,17 @@ function render_cards($page){
                 <header>
                     <h2>'. $row["Title"] .'</h2>
                 </header>
-                    ' . $row["Content"] . '
+                    ' . $row["Content"];
+             if ($page == "home") echo '
                 <footer>
                     <p>' . date("d.m.Y",strtotime($row["TimeStamp"])) . '</p>
-                </footer>
-            </article>
-            ';
+                </footer>';
+            echo'</article>';
         }
     } else {
         echo "Žádné karty";
     }
-
-    $mysqli->close();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -153,45 +152,9 @@ function render_cards($page){
                         Aktuálně studuji obor Informatika na Matematicko-fyzikální fakutlně UK.
                     </p>                   
                 </div>
-                <article>
-                    <header>
-                        <h2>ZS 2020/21</h2>
-                    </header>
-                    <section>
-                        <h3>
-                            Poznámky ke stažení
-                        </h3>
-                        <p>
-                            Mé poznámky z 1. semestru na MFFUK na oboru informatika. Rozhodně však nejsou kompletním přehledem učiva.
-                        </p>
-                        <br/>
-                        <ul>
-                            <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpsa8nDF0GEdbMuzzw?e=cORMyf">Algoritmizace</a></li>
-                            <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpsb2ES8oNeALVgaRw?e=FipwYB">Diskrétní matematika (pojmy)</a></li>
-                            <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpscf6oKiL_gRGvXOA?e=ufEsg1">Lienární algebra (pojmy)</a></li>
-                            <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpsd9kVDV0JjR110_Q?e=JBd5gt">Principy počítačů</a></li>
-                            <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpxenbPuUmK0gOGQIQ?e=GN5AQy">Principy počítačů (zápisky z hodin)</a></li>
-                            <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpsf4LN0n1FtYwE7ag?e=4ckglB">Úvod do počítačových sítí</a></li>
-                            <li><a target="_blank" href="https://1drv.ms/w/s!AtwQciT4dmsCtpseXnsFyiqZQgXWaA?e=7ICZja">Úvod do počítačových sítí (zpracované otázky)</a></li>
-                        </ul>
-                    </section>
-                    <hr class="section-divider"/>
-                    <section>
-                        <h3>
-                            Zdrojové kódy
-                        </h3>
-                        <p>
-                           Zdrojové kódy ze cvičení z Programování I v Pythonu.
-                        </p>
-                        <br/>
-                        <ul>
-                            <li><a target="_blank" href="https://1drv.ms/u/s!AtwQciT4dmsCtptBGYXVYP_7Lf_TJw?e=QFAOGE">Projekt pro MS Visual studio</a></li>
-                        </ul>
-                    </section>
-                    <footer>
-                        
-                    </footer>
-                </article>
+                <?php 
+                    render_cards("mffuk")
+                ?>
             </div>
             <div id="projects" class="content-page">
                 <div class="main-content-header">
@@ -199,68 +162,9 @@ function render_cards($page){
                     <p>
                     </p>
                 </div>
-                <article>
-                    <header>
-                        <h2>GraphIt</h2>
-                    </header>
-                    <section>
-                        <h3>
-                            Popis
-                        </h3>
-                        <p>
-                            Knihovna v Pythonu pro práci s grafy (množina vrcholů a hran, viz <a href="https://en.wikipedia.org/wiki/Graph_theory">Wikipedia</a>).
-                        </p>
-                    </section>
-                    <section>
-                        <h3>
-                            Funkce
-                        </h3>
-                        <ul>
-                            <li>Dijkstrův algoritmus</li>
-                            <li>Kruskalův algoritmus</li>
-                            <li>Lagrangeova interpolace</li>
-                            <li>Bellovo číslo (počet rozkladů množiny)</li>
-                        </ul>
-                    </section>
-                    <section>
-                        <h3>
-                            Odkazy
-                        </h3>
-                        <ul>
-                            <li><a target="_blank" href="https://github.com/davidzemancz/GraphIt">GitHub</a></li>
-                            <li><a target="_blank" href="https://github.com/davidzemancz/GraphIt/blob/master/GraphIt/Docs/GraphIt-cs.docx">Dokumentace</a></li>
-                        </ul>
-                    </section>
-                    <footer>
-                        
-                    </footer>
-                </article>
-                <article>
-                    <header>
-                        <h2>PythonAI</h2>
-                    </header>
-                    <section>
-                        <h3>
-                            Popis
-                        </h3>
-                        <p>
-                            Testování AI v Pythonu. Napojení na kryptoměnovou burzu Binance prostřednictvím knihovny <a href="https://github.com/sammchardy/python-binance">python-binance</a>.
-                        </p>
-                    </section>
-                    <section>
-                        <h3>
-                            Odkazy
-                        </h3>
-                        <ul>
-                            <li><a target="_blank" href="https://github.com/davidzemancz/PythonAI">GitHub</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/playlist?list=PLQVvvaa0QuDcjD5BAw2DxE6OF2tius3V3">Tutoriály</a></li>
-                            <li><a target="_blank" href="https://www.youtube.com/watch?v=aircAruvnKk&list=PLZHQObOWTQDNU6R1_67000Dx_ZCJB-3pi">3Blue1Brown</a></li>
-                        </ul>
-                    </section>
-                    <footer>
-                        
-                    </footer>
-                </article>
+                <?php 
+                    render_cards("projects")
+                ?>
             </div>
             <div id="about" class="content-page">
                 <div id="cv">
@@ -275,7 +179,7 @@ function render_cards($page){
                                 </h3>
                                 <ul>
                                     <li>20 let</li>
-                                    <li>Vývojář (C#, Python, ReactJS, Caché)</li>
+                                    <li>Vývojář</li>
                                     <li>5 let praxe</li>
                                     <li>Praha, České Budějovice</li>
                                 </ul>
@@ -302,6 +206,31 @@ function render_cards($page){
                                         <ul>
                                             <li>Prachatice, Národní 1018</li>
                                             <li>2007-2012</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="cv-section">
+                                <h3>
+                                    Zkušenosti
+                                </h3>
+                                <ul>
+                                    <li>Programovací jazyky
+                                        <ul>
+                                            <li>C#</li>
+                                            <li>Intersystems Caché Object Script</li>
+                                            <li>JS, HTML, CSS</li>
+                                            <li>Python</li>
+                                        </ul>
+                                    </li>
+                                    <li>Technologie
+                                        <ul>
+                                            <li>Windows Forms</li>
+                                            <li>ASP.NET MVC</li>
+                                            <li>Intersystems Caché, IRIS</li>
+                                            <li>ReactJS</li>
+                                            <li>ReactNative</li>
+                                            <li>Keras (TensorFlow)</li>
                                         </ul>
                                     </li>
                                 </ul>

@@ -15,9 +15,6 @@ else{
     define('DB_NAME', 'web');
 }
 
-
-
-
  
 // Create connection
 $mysqli = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);

@@ -318,4 +318,13 @@ article footer a:hover{
     .cv-print-only{
         display: block;
     }
+    .cv h2{
+        font-size: 1.7em;
+    }
+    .cv h3{
+        font-size: 1.2em;
+    }
+    .cv li{
+        font-size: 11px;
+    }
 }
