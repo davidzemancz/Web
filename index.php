@@ -110,6 +110,9 @@ function render_cards($page){
         <div class="header">
             <img alt="logo" class="logo" src="img/logo_inv.png">
             <h1>David Zeman</h1>
+            <div class="searchbox">
+                <input type="text" placeholder="Hledat..."/>
+            </div>
         </div>
         <div class="main-menu">
            <div class="main-menu-items">

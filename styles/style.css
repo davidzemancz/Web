@@ -31,6 +31,22 @@ body{
     font-size: 32px;
     margin: 0 0 0 16px;
 }
+.searchbox{
+    position: fixed;
+    right: 40px;
+}
+.searchbox input{
+    background-color: transparent;
+    border: lightgrey 1px solid;
+    border-radius: 8px;
+    color: white;
+    padding: 8px;
+}
+.searchbox input:focus{
+    border: lightgrey 1px solid;
+    border-radius: 8px;
+    outline: none;
+}
 .logo{
     border-radius: 32px;
     height: auto;
