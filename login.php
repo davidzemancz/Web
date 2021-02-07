@@ -96,7 +96,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 </head>
 <body>
     <div class="login">
-        <h1>David Zeman</h1>
+        <h1><a href="https://davidzeman.cz/">David Zeman</a></h1>
         <form class="login-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group">
                     <label for="username">Uživatelské jméno:</label>
