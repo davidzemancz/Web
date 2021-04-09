@@ -109,7 +109,7 @@ function render_cards($page){
     <body onload="on_body_load()">
         <div class="header">
             <img alt="logo" class="logo" src="img/logo_inv.png">
-            <h1>David Zeman</h1>
+            <h1>David Zeman a Péťa ♥</h1>
             <div class="searchbox">
                 <input type="text" placeholder="Hledat..."/>
             </div>
@@ -221,6 +221,7 @@ function render_cards($page){
                                     <li>Programovací jazyky
                                         <ul>
                                             <li>C#</li>
+                                            <li>C++</li>
                                             <li>Intersystems Caché Object Script</li>
                                             <li>JS, HTML, CSS</li>
                                             <li>Python</li>
@@ -243,6 +244,19 @@ function render_cards($page){
                                     Praxe
                                 </h3>
                                 <ul>
+                                    <li>ELAB
+                                        <ul>
+                                            <li>KDZ Group s.r.o.</li>
+                                            <li>Aplikace pro silniční laboratoře pro evidenci vzorků a jejich vyhodnocování podle ČSN.</li>
+                                            <li class="italic">C#, Caché</li>
+                                        </ul>
+                                    </li>
+                                    <li>WEBIS
+                                        <ul>
+                                            <li>Intranetový systém zahrnující helpdesk, wiki a jiné nástroje pro interní správu firmy.</li>
+                                            <li class="italic">React, ReactNative, Caché</li>
+                                        </ul>
+                                    </li>
                                     <li>Skladové hospodářství
                                         <ul>
                                             <li>M-line software s.r.o.</li>
